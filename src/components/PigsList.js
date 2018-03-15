@@ -14,18 +14,39 @@ class PigsList extends Component{
   constructor(){
     super();
     this.state = {
-      // pigs: hogs
-      // isFlipped: false
+      pigName:"",
+      greased:false,
+      specialty:"",
+      "highest medal achieved": "",
+      'weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water': 0
 
     }
   }
 
+  showCard = (id)=>{
+
+    const result = this.props.hogs.find( hog => hog.name === id );
+    this.setState({pigName: result.name,
+    greased: result.greased,
+    specialty: result.specialty,
+    "highest medal achieved": result["highest medal achieved"],
+    'weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water': result["weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water"]
+  })
+}
+
+
+
+
+
+
+
   render(){
+    
     return (
 
 
-      <div className='ui grid container'>
-      {this.props.hogs.map(hog => <Piggy name={hog.name} key={uuid()}  />)}
+      <div className='ui grid container'  >
+      {this.props.hogs.map(hog => <Piggy name={hog.name} key={uuid()} showCard={this.showCard}  />)}
       </div>
 
 
