@@ -2,7 +2,7 @@ import React, { Component } from "react"
 
 import hogs from "../porkers_data.js"
 import uuid from 'uuid'
-import PigsList from "../PigsList"
+import PigsList from "../components/PigsList"
 import FlipCard from "react-flipcard"
 
 class PigsContainer extends Component{
@@ -29,4 +29,4 @@ class PigsContainer extends Component{
 
 
 
-export default PigsList;
+export default PigsContainer;

@@ -3,8 +3,7 @@ import React, { Component } from "react"
 import hogs from "../porkers_data.js"
 import uuid from 'uuid'
 import FlipCard from "react-flipcard"
-
-
+import Piggy from "./Piggy";
 
 
 
@@ -26,7 +25,7 @@ class PigsList extends Component{
 
 
       <div className='ui grid container'>
-      {hogs.map(hog => <Hog name={hog.name} key={uuid()}  />)}
+      {this.props.hogs.map(hog => <Piggy name={hog.name} key={uuid()}  />)}
       </div>
 
 
